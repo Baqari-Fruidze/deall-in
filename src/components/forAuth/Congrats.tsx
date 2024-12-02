@@ -1,15 +1,14 @@
 "use client";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { Link, useNavigate } from "react-router-dom";
 export default function Congrats({
   setSuccess,
 }: {
   setSuccess: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
-  const router = useRouter();
+  const navigate = useNavigate();
   const foo = () => {
     setSuccess(false);
-    router.push("/login");
+    navigate("/login");
   };
   return (
     <div className="bg-[#152C5E] max-w-[500px] h-fit py-[60px] px-[24px] flex flex-col items-center gap-[16px] rounded-lg mt-[50px]">
@@ -28,7 +27,7 @@ export default function Congrats({
         </div>
         <span className="text-white text-[16px] font-normal">or</span>
         <Link
-          href={"/"}
+          to={"/"}
           className="text-white text-[17px] font-[600] underline underline-offset-4 cursor-pointer"
         >
           Home page

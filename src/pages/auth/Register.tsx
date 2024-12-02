@@ -1,21 +1,18 @@
-"use client";
-import Image from "next/image";
-import logo from "/public/hands.png";
-import "../../globals.css";
-import show from "/public/eye-line.svg";
-import hide from "/public/eye-off-line.svg";
+import logo from "/public/forAuth/hands.png";
+import show from "/public/forAuth/eye-line.svg";
+import hide from "/public/forAuth/eye-off-line.svg";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { IUser } from "@/types/Auth";
+import { IUser } from "../../types/Auth";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { RegisterScema } from "@/scema/RegisterScema";
-import { IerrorsInRegister } from "@/types/Auth";
-import SelectDay from "../../../components/forRegister/SelectDay";
-import SelectMonth from "../../../components/forRegister/SelectMonth";
-import SelectYear from "../../../components/forRegister/SelectYear";
-import ConfirmCodeInput from "../../../components/forRegister/ConfirmCodeInput";
-import Radios from "../../../components/forRegister/Radios";
-import ConfirmForRegister from "@/components/forRegister/ConfirmForRegister";
+import { RegisterScema } from "../../scema/RegisterScema";
+import { IerrorsInRegister } from "../../types/Auth";
+import SelectDay from "../../components/forAuth/SelectDay";
+import SelectMonth from "../../components/forAuth/SelectMonth";
+import SelectYear from "../../components/forAuth/SelectYear";
+import ConfirmCodeInputForRegister from "../../components/forAuth/ConfirmForRegister";
+import Radios from "../../components/forAuth/Radios";
+// import ConfirmForRegister from "@/components/forRegister/ConfirmForRegister";
 // import karegister from "../../../../public/locales/ka.json";
 // import enregister from "../../../../public/locales/en.json";
 // import { initReactI18next, useTranslation } from "react-i18next";
@@ -80,12 +77,12 @@ export default function Register() {
   return (
     <div className=" cover bg-[#F1F5FF] w-full pl-[16px] pr-[16px] pt-[27px] min-h-screen flex justify-center">
       {withoutErrors ? (
-        <ConfirmForRegister email={email} />
+        <ConfirmCodeInputForRegister email={email} />
       ) : (
         <div className="blue w-full bg-[#152C5E] max-w-[534px]  pt-[24px] pb-[50px]  flex justify-center h-fit ">
           <div className="inputsCon   flex  flex-col gap-[30px] justify-center items-center bg-[#152C5E] pl-[16px] pr-[16px]  w-full ">
             <div className="flex items-center gap-[14px]">
-              <Image src={logo} width={48} height={37} alt="logo"></Image>
+              <img src={logo} alt="logo" className="w-[48px] h-[37px]" />
               <span className="text-white text-[40px] font-bold tracking-[1px] leading-[37px]">
                 DEALIN
               </span>
@@ -166,23 +163,21 @@ export default function Register() {
                   {...register("password1")}
                 />
                 {changeType ? (
-                  <Image
+                  <img
                     src={hide}
                     width={21}
                     height={18}
                     alt="icon"
-                    className="absolute top-[30%] right-5"
+                    className="absolute top-[30%] right-5 w-[21px] h-[21px]"
                     onClick={() => setChangeType(!changeType)}
-                  ></Image>
+                  />
                 ) : (
-                  <Image
+                  <img
                     src={show}
-                    width={21}
-                    height={18}
                     alt="icon"
-                    className="absolute top-[30%] right-5"
+                    className="absolute top-[30%] right-5 w-[21px] h-[18px]"
                     onClick={() => setChangeType(!changeType)}
-                  ></Image>
+                  />
                 )}
                 {errors.password1 ? (
                   <span className="text-red-500 text-[15px] absolute top-[55px] left-2 des:top-[60px]">
@@ -205,23 +200,21 @@ export default function Register() {
                   {...register("password2")}
                 />
                 {changeType2 ? (
-                  <Image
+                  <img
                     src={hide}
-                    width={21}
-                    height={18}
                     alt="icon"
-                    className="absolute top-[30%] right-5"
+                    className="absolute top-[30%] right-5 w-[21px] h-[18px]"
                     onClick={() => setChangeType2(!changeType2)}
-                  ></Image>
+                  />
                 ) : (
-                  <Image
+                  <img
                     src={show}
                     width={21}
                     height={18}
                     alt="icon"
-                    className="absolute top-[30%] right-5"
+                    className="absolute top-[30%] right-5 w-[21px] h-[18px]"
                     onClick={() => setChangeType2(!changeType2)}
-                  ></Image>
+                  />
                 )}
                 {errors.password2 ? (
                   <span className="text-red-500 text-[15px] absolute top-[55px] left-2 des:top-[60px]">

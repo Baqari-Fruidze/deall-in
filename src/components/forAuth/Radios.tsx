@@ -1,9 +1,8 @@
 "use client";
 import { useState } from "react";
-import dolarIcon from "/public/money-dollar-circle-line.svg";
-import enterpreneuerIcon from "/public/briefcase-line.svg";
-import Image from "next/image";
-import { IUser } from "@/types/Auth";
+import dolarIcon from "/public/forAuth/money-dollar-circle-line.svg";
+import enterpreneuerIcon from "/public/forAuth/briefcase-line.svg";
+import { IUser } from "../../types/Auth";
 import { FieldErrors, UseFormRegister } from "react-hook-form";
 // import { useTranslation } from "react-i18next";
 
@@ -39,12 +38,13 @@ const CustomRadioButtons = ({
               : "bg-white"
           }`}
         ></span>
-        <Image
+        <img
           src={enterpreneuerIcon}
           width={15}
           height={15}
           alt="icon"
-        ></Image>
+          className="w-[15px] h-[15px]"
+        />
         <span
           className={`text-[14px] text-[#B6C8EF] font-medium  underline ${
             selectedOption === "entrepreneur"
@@ -77,7 +77,13 @@ const CustomRadioButtons = ({
               : "bg-white"
           }`}
         ></span>
-        <Image src={dolarIcon} width={15} height={15} alt="icon"></Image>
+        <img
+          src={dolarIcon}
+          width={15}
+          height={15}
+          alt="icon"
+          className="w-[15px] h-[15px]"
+        />
         <span
           className={`text-[14px] text-[#B6C8EF] font-medium  underline ${
             selectedOption === "investor" ? "decoration-[#C29252]" : "normal"

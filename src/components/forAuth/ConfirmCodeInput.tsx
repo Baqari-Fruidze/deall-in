@@ -1,12 +1,11 @@
 "use client";
 import React, { useState } from "react";
-import { useRouter, usePathname } from "next/navigation";
 // import Congrats from "./Congrats";
-import { ILogin } from "@/types/Auth";
-import { signIn } from "next-auth/react";
+import { ILogin } from "../../types/Auth";
+import { useNavigate } from "react-router-dom";
 // import { useTranslation } from "react-i18next";
 
-export default function ConfirmCodeInput({
+export default function ConfirmCodeInputForLogin({
   email,
   password,
 }: {
@@ -14,33 +13,47 @@ export default function ConfirmCodeInput({
   user: ILogin;
   password: string;
 }) {
+  const navigate = useNavigate();
   // const { t } = useTranslation("confirm");
   const [value, setValue] = useState("");
   const [clicked, setClicked] = useState<boolean>(false);
   const [erori, setErori] = useState<boolean>(false);
   // const [success, setSuccess] = useState<boolean>(false);
   // const path = usePathname();
-
   const inputValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
-  const router = useRouter();
   const inputData = async () => {
     setClicked(true);
 
-    const res = await signIn("credentials", {
-      email: email,
-      code: value,
+    try {
+      const res = await fetch(
+        "https://dealin-api-production.up.railway.app/api/dj-rest-auth/login/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: email,
+            code: value,
+          }),
+        }
+      );
 
-      redirect: false,
-    });
-
-    if (res?.ok) {
-      router.push("/user-profile");
-    } else {
+      if (res.ok) {
+        navigate("/UserDashboard");
+      } else {
+        setErori(true);
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
       setErori(true);
+    } finally {
+      setClicked(false);
     }
   };
+
   return (
     // <>
     //   {success ? (

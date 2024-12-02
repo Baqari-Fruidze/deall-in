@@ -1,14 +1,13 @@
 "use client";
-import React, { useState } from "react";
-import show from "/public/eye-line.svg";
-import hide from "/public/eye-off-line.svg";
-import Image from "next/image";
-import Link from "next/link";
+import { useState } from "react";
+import show from "/public/forAuth/eye-line.svg";
+import hide from "/public/forAuth/eye-off-line.svg";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { ILogin } from "@/types/Auth";
+import { ILogin } from "../../types/Auth";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { LoginSchema } from "@/scema/LoginScema";
-import ConfirmCodeInput from "@/components/forRegister/ConfirmCodeInput";
+import { LoginSchema } from "../../scema/LoginScema";
+import ConfirmCodeInputForLogin from "../../components/forAuth/ConfirmCodeInput";
+import { Link } from "react-router-dom";
 // import { initReactI18next, useTranslation } from "react-i18next";
 // import i18n from "i18next";
 // import kaLogin from "../../../../public/locales/ka.json";
@@ -59,7 +58,6 @@ export default function Page() {
     );
 
     const dataaa = await res.json();
-    console.log(dataaa);
     if (res.ok) {
       setSuc(true);
     }
@@ -67,10 +65,6 @@ export default function Page() {
 
   return (
     <div className="bg-[#C7D9FF] w-full min-h-screen flex justify-center items-center">
-      {/* <div>
-        <button onClick={() => switchLanguage("en")}>English</button>
-        <button onClick={() => switchLanguage("ka")}>ქართული</button>
-      </div> */}
       {!suc ? (
         <div className="bg-[#152C5E] flex flex-col items-center gap-[50px] max-w-[570px] mx-[auto] my-[0] py-[50px] px-[24px]">
           <h1 className="text-[36px] text-[#F1F5FF] font-[600]">Log In</h1>
@@ -105,12 +99,10 @@ export default function Page() {
                   placeholder="password"
                   {...register("password")}
                 />
-                <Image
+                <img
                   src={type ? hide : show}
-                  width={21}
-                  height={18}
                   alt="icon"
-                  className="absolute top-[30%] right-5"
+                  className="absolute top-[33%] right-5 w-[21px] h-[18px]"
                   onClick={() => setType(!type)}
                 />
                 <span className="absolute text-red-500 text-[16px] top-[54px] left-3 font-medium des:top-[58px]">
@@ -122,7 +114,7 @@ export default function Page() {
                   Don t have an account?
                 </span>
                 <Link
-                  href="/register"
+                  to={"/register"}
                   className="text-[17px] font-[700] underline decoration-white decoration-2 underline-offset-4 text-white leading-normal des:text-[19px]"
                 >
                   Register now
@@ -135,7 +127,7 @@ export default function Page() {
           </form>
         </div>
       ) : (
-        <ConfirmCodeInput email={Email} user={user} password={pas} />
+        <ConfirmCodeInputForLogin email={Email} user={user} password={pas} />
       )}
     </div>
   );

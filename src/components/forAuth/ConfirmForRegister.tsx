@@ -2,17 +2,13 @@
 import React, { useState } from "react";
 // import { useRouter, usePathname } from "next/navigation";
 import Congrats from "./Congrats";
-import { ILogin } from "@/types/Auth";
-import { signIn } from "next-auth/react";
+import { ILogin } from "../../types/Auth";
 // import { useTranslation } from "react-i18next";
 
-export default function ConfirmCodeInput({
+export default function ConfirmCodeInputForRegister({
   email,
-  password,
 }: {
   email: string;
-  user: ILogin;
-  password: string;
 }) {
   // const { t } = useTranslation("confirm");
   const [value, setValue] = useState("");
