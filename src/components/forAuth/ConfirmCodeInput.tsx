@@ -42,15 +42,13 @@ export default function ConfirmCodeInputForLogin({
       );
 
       if (res.ok) {
-        navigate("/UserDashboard");
+        navigate("/EnterpreneuerDashboard");
       } else {
         setErori(true);
       }
     } catch (error) {
       console.error("Error during login:", error);
       setErori(true);
-    } finally {
-      setClicked(false);
     }
   };
 

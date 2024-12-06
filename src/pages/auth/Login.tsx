@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import show from "/public/forAuth/eye-line.svg";
-import hide from "/public/forAuth/eye-off-line.svg";
+import show from "/forAuth/eye-line.svg";
+import hide from "/forAuth/eye-off-line.svg";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { ILogin } from "../../types/Auth";
 import { yupResolver } from "@hookform/resolvers/yup";

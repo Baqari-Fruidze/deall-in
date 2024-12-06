@@ -1,6 +1,6 @@
-import logo from "/public/forAuth/hands.png";
-import show from "/public/forAuth/eye-line.svg";
-import hide from "/public/forAuth/eye-off-line.svg";
+import logo from "/forAuth/hands.png";
+import show from "/forAuth/eye-line.svg";
+import hide from "/forAuth/eye-off-line.svg";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { IUser } from "../../types/Auth";
@@ -54,6 +54,7 @@ export default function Register() {
 
   const inputsData: SubmitHandler<IUser> = async (data) => {
     setEmail(data.email);
+    console.log(data);
     const res = await fetch(
       "https://dealin-api-production.up.railway.app/api/dj-rest-auth/registration/",
 
@@ -66,11 +67,12 @@ export default function Register() {
         cache: "no-cache",
       }
     );
-    console.log(res);
+    const a = await res.json();
+    console.log(a);
     if (res.ok) {
       setWithoutErrors(true);
     } else {
-      const result = await res.json();
+      // const result = await res.json();
     }
   };
 

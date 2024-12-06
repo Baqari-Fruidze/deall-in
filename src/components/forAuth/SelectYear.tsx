@@ -1,4 +1,4 @@
-import { IUser } from "@/types/Auth";
+import { IUser } from "../../types/Auth";
 import { useState } from "react";
 import { FieldErrors, UseFormRegister } from "react-hook-form";
 // import { useTranslation } from "react-i18next";
@@ -40,10 +40,7 @@ export default function YearSelect({
         } rounded-lg py-2 pl-8 pr-6 appearance-none`}
         value={selectedYear}
         {...register("year", {
-          onChange: (e) => {
-            handleChange(e); // Your custom handler logic
-            e.target.value = e.target.value; // Ensure the value is correctly passed to react-hook-form
-          },
+          onChange: handleChange,
         })}
       >
         <option value="" disabled></option>

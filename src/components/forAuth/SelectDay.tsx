@@ -1,4 +1,4 @@
-import { IUser } from "@/types/Auth";
+import { IUser } from "../../types/Auth";
 import { useState } from "react";
 import { FieldErrors, UseFormRegister } from "react-hook-form";
 // import { useTranslation } from "react-i18next";
@@ -40,10 +40,7 @@ export default function DaySelect({
         } rounded-lg py-2 pl-8 pr-6 appearance-none`}
         value={selectedDay}
         {...register("day", {
-          onChange: (e) => {
-            handleChange(e);
-            e.target.value = e.target.value;
-          },
+          onChange: handleChange,
         })}
       >
         <option value="" disabled></option>

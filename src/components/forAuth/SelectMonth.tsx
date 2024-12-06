@@ -1,4 +1,4 @@
-import { IUser } from "@/types/Auth";
+import { IUser } from "../../types/Auth";
 import { useState } from "react";
 import { FieldErrors, UseFormRegister } from "react-hook-form";
 // import { useTranslation } from "react-i18next";
@@ -31,10 +31,7 @@ export default function MonthSelect({
         } rounded-lg py-2 pl-8 pr-4 appearance-none`}
         value={selectedMonth}
         {...register("month", {
-          onChange: (e) => {
-            handleChange(e);
-            e.target.value = e.target.value;
-          },
+          onChange: handleChange,
         })}
       >
         <option value="" disabled></option>

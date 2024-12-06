@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 // import { useRouter, usePathname } from "next/navigation";
 import Congrats from "./Congrats";
-import { ILogin } from "../../types/Auth";
+
 // import { useTranslation } from "react-i18next";
 
 export default function ConfirmCodeInputForRegister({

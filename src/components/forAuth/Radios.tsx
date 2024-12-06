@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import dolarIcon from "/public/forAuth/money-dollar-circle-line.svg";
-import enterpreneuerIcon from "/public/forAuth/briefcase-line.svg";
+import dolarIcon from "/forAuth/money-dollar-circle-line.svg";
+import enterpreneuerIcon from "/forAuth/briefcase-line.svg";
 import { IUser } from "../../types/Auth";
 import { FieldErrors, UseFormRegister } from "react-hook-form";
 // import { useTranslation } from "react-i18next";

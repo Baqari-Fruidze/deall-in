@@ -1,20 +1,16 @@
 "use client";
 import React from "react";
-import logo from "/public/hands.png";
-import burger from "/public/icon-hamburger.svg";
-import Image from "next/image";
-import dealinText from "/public/dealinText.png";
-import { signOut } from "next-auth/react";
+// import logo from "/forAuth/hands.png";
+import burger from "/forAuth/icon-hamburger.svg";
+// import dealinText from "/forAuth/dealinText.png";
+import logo from "/dealinLogo.svg";
 
 export default function Header() {
   return (
     <div className="flex justify-between items-center bg-[#152C5E] p-[16px]">
-      <div className="flex gap-[14px] items-center">
-        <Image src={logo} width={48} height={37} alt="icon"></Image>
-        <Image src={dealinText} width={133} height={37} alt="text"></Image>
-      </div>
-      <Image src={burger} width={28} height={28} alt="burger icon"></Image>
-      <span onClick={() => signOut()}>signout</span>
+      <img src={logo} alt="" className=" h-[37px] w-[200px]" />
+
+      <img src={burger} alt="burger icon" className=" w-[28px] h-[28px]" />
     </div>
   );
 }
