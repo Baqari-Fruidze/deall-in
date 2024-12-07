@@ -7,7 +7,7 @@ export default function EnterpreneuerLayout() {
   const desktop = useMediaQuery("only screen and (min-width : 1440px)");
   return (
     <main>
-      {desktop ? <HeaderDesktop /> : <Header />}
+      {/* {desktop ? <HeaderDesktop /> : <Header />} */}
 
       <Outlet />
     </main>

@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+import { Children, StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -9,17 +9,26 @@ import Register from "./pages/auth/Register";
 
 import EnterpreneuerLayout from "./layouts/EnterpreneuerLayout";
 import EnterpreneuerDashboard from "./pages/enterpreneuer/EnterpreneuerDashboard";
+import MainLayout from "./layouts/MainLayout";
 
 const router = createBrowserRouter([
-  { path: "/", element: <Home /> },
   { path: "login", element: <Login /> },
   { path: "register", element: <Register /> },
-
   {
     path: "/",
-    element: <EnterpreneuerLayout />,
+    element: <MainLayout />,
     children: [
-      { path: "/EnterpreneuerDashboard", element: <EnterpreneuerDashboard /> },
+      { path: "/", element: <Home /> },
+      {
+        path: "/",
+        element: <EnterpreneuerLayout />,
+        children: [
+          {
+            path: "/EnterpreneuerDashboard",
+            element: <EnterpreneuerDashboard />,
+          },
+        ],
+      },
     ],
   },
 ]);
