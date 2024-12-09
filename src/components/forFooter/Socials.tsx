@@ -1,6 +1,6 @@
-import facebookLogo from "../../../public/socialsIcons/facebook-circle-fill.svg";
-import youtubeLogo from "../../../public/socialsIcons/youtube-fill.svg";
-import instagranLogo from "../../../public/socialsIcons/instagram-fill.svg";
+import facebookLogo from "/socialsIcons/facebook-circle-fill.svg";
+import youtubeLogo from "/socialsIcons/youtube-fill.svg";
+import instagranLogo from "/socialsIcons/instagram-fill.svg";
 
 export default function Socials() {
   return (
