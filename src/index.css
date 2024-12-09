@@ -18,6 +18,8 @@
 body {
   @apply font-chivo;
 }
+* {
+}
 .inputsINStart {
   background-position: left 20px top 50%;
   background-repeat: no-repeat;

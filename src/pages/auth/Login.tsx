@@ -53,11 +53,9 @@ export default function Page() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
-        cache: "no-cache",
       }
     );
 
-    const dataaa = await res.json();
     if (res.ok) {
       setSuc(true);
     }

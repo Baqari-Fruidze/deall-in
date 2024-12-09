@@ -1,15 +1,54 @@
 import { createContext, ReactNode, useContext, useState } from "react";
 import { iType } from "../../types/ContextType";
+import { IEnterpreneuer } from "../../types/EnterpreneuerType";
 
 const hookscontext = createContext<iType>({
-  test: false,
-  setTest: () => {},
+  enterpreneuerType: {
+    access: "",
+    refresh: "",
+    user_info: {
+      username: "",
+      email: "",
+      first_name: "",
+      last_name: "",
+      date_birth: "",
+      id_number: "",
+      physical_address: "",
+      legal_address: "",
+      mobile_number: "",
+      first_citizenship: "",
+      second_citizenship: "",
+      gender: "",
+      name: "",
+      picture: "",
+    },
+  },
+  setEnterpreneuerType: () => {},
 });
 
 export default function ContextProvider({ children }: { children: ReactNode }) {
-  const [test, setTest] = useState(false);
+  const [enterpreneuerType, setEnterpreneuerType] = useState<IEnterpreneuer>({
+    access: "",
+    refresh: "",
+    user_info: {
+      username: "",
+      email: "",
+      first_name: "",
+      last_name: "",
+      date_birth: "",
+      id_number: "",
+      physical_address: "",
+      legal_address: "",
+      mobile_number: "",
+      first_citizenship: "",
+      second_citizenship: "",
+      gender: "",
+      name: "",
+      picture: "",
+    },
+  });
   return (
-    <hookscontext.Provider value={{ test, setTest }}>
+    <hookscontext.Provider value={{ enterpreneuerType, setEnterpreneuerType }}>
       {children}
     </hookscontext.Provider>
   );

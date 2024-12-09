@@ -40,8 +40,10 @@ export default function ConfirmCodeInputForLogin({
           }),
         }
       );
-
+      console.log(res);
       if (res.ok) {
+        const data = await res.json();
+        console.log(data);
         navigate("/EnterpreneuerDashboard");
       } else {
         setErori(true);

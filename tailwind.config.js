@@ -14,6 +14,9 @@ export default {
       fontFamily: {
         chivo: ["Chivo", "sans-serif"], // Define Chivo as a custom font
       },
+      colors: {
+        customBlue: "#C7D9FF",
+      },
     },
   },
   plugins: [],

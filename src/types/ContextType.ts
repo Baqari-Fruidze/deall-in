@@ -1,4 +1,6 @@
+import { IEnterpreneuer } from "./EnterpreneuerType";
+
 export interface iType {
-  test: boolean;
-  setTest: React.Dispatch<React.SetStateAction<boolean>>;
+  enterpreneuerType: IEnterpreneuer;
+  setEnterpreneuerType: React.Dispatch<React.SetStateAction<IEnterpreneuer>>;
 }
