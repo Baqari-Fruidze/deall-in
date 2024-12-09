@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .text-decoration-thickness-1 {
+    text-decoration-thickness: 1px;
+  }
+  .text-decoration-thickness-2 {
+    text-decoration-thickness: 2px;
+  }
+  .text-decoration-thickness-4 {
+    text-decoration-thickness: 4px;
+  }
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&display=swap");
 body {
   @apply font-chivo;
