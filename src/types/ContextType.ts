@@ -1,6 +1,6 @@
 import { IEnterpreneuer } from "./EnterpreneuerType";
 
 export interface iType {
-  enterpreneuerType: IEnterpreneuer;
-  setEnterpreneuerType: React.Dispatch<React.SetStateAction<IEnterpreneuer>>;
+  enterpreneuerData: IEnterpreneuer;
+  setEnterpreneuerData: React.Dispatch<React.SetStateAction<IEnterpreneuer>>;
 }

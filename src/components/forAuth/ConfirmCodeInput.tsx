@@ -3,6 +3,7 @@ import React, { useState } from "react";
 // import Congrats from "./Congrats";
 import { ILogin } from "../../types/Auth";
 import { useNavigate } from "react-router-dom";
+import { MyContext } from "../../utils/contexts/ContextProvider";
 // import { useTranslation } from "react-i18next";
 
 export default function ConfirmCodeInputForLogin({
@@ -23,6 +24,7 @@ export default function ConfirmCodeInputForLogin({
   const inputValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
+  const { enterpreneuerData, setEnterpreneuerData } = MyContext();
   const inputData = async () => {
     setClicked(true);
 
@@ -40,10 +42,12 @@ export default function ConfirmCodeInputForLogin({
           }),
         }
       );
-      console.log(res);
+
       if (res.ok) {
         const data = await res.json();
         console.log(data);
+        setEnterpreneuerData(data);
+
         navigate("/EnterpreneuerDashboard");
       } else {
         setErori(true);
@@ -53,6 +57,7 @@ export default function ConfirmCodeInputForLogin({
       setErori(true);
     }
   };
+  console.log(enterpreneuerData);
 
   return (
     // <>
