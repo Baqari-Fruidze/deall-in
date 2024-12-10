@@ -4,7 +4,7 @@ import React from "react";
 import burger from "/forBurger/menu-line.svg";
 // import dealinText from "/forAuth/dealinText.png";
 import logo from "/test.png";
-
+/////git
 export default function Header() {
   return (
     <div className="flex justify-between items-center bg-[#152C5E] p-[16px]">
