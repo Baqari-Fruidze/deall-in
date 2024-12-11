@@ -57,7 +57,6 @@ export default function ConfirmCodeInputForLogin({
       setErori(true);
     }
   };
-  console.log(enterpreneuerData);
 
   return (
     // <>

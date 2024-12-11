@@ -10,6 +10,7 @@ import Register from "./pages/auth/Register";
 import EnterpreneuerLayout from "./layouts/EnterpreneuerLayout";
 import EnterpreneuerDashboard from "./pages/enterpreneuer/EnterpreneuerDashboard";
 import MainLayout from "./layouts/MainLayout";
+import EnterpreneuerProfile from "./pages/enterpreneuer/EnterpreneuerProfile";
 
 const router = createBrowserRouter([
   { path: "login", element: <Login /> },
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
             path: "/EnterpreneuerDashboard",
             element: <EnterpreneuerDashboard />,
           },
+          { path: "/EnterpreneuerProfile", element: <EnterpreneuerProfile /> },
         ],
       },
     ],
