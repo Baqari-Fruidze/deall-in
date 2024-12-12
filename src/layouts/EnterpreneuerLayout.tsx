@@ -8,12 +8,12 @@ import LeftSideDashboard from "../components/forEnterpreneuer/LeftSideDashboard"
 export default function EnterpreneuerLayout() {
   const desktop = useMediaQuery("only screen and (min-width : 1440px)");
   return (
-    <main>
+    <div className="des:pl-[152px] bg-[#C7D9FF]">
       {/* {desktop ? <HeaderDesktop /> : <Header />} */}
       {!desktop ? <YellowIconCommon /> : null}
       {desktop ? <LeftSideDashboard /> : null}
 
       <Outlet />
-    </main>
+    </div>
   );
 }
