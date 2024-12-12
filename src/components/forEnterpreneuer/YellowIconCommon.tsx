@@ -1,7 +1,9 @@
 import yellowIcon from "/forDashboard/dashboardIcon.svg";
 import arrow from "/forDashboard/arrowDashboard.svg";
+import { useState } from "react";
 
 export default function YellowIconCommon() {
+  const [click, setClicked] = useState<boolean>(false);
   return (
     <div className="bg-[#C7D9FF]">
       <div className="flex items-center gap-[23px] w-[83px] h-[53px] bg-[#fff] rounded-br-[10px] px-[8px]">
