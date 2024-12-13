@@ -8,9 +8,15 @@ import exit from "/forDashboard/exit.svg";
 import { useMediaQuery } from "@uidotdev/usehooks";
 import { useState } from "react";
 
-export default function LeftSideDashboard() {
+export default function LeftSideDashboard({
+  leftDahboardClicked,
+  setLeftDashboardClicked,
+}: {
+  leftDahboardClicked: boolean;
+  setLeftDashboardClicked: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
   const desktop = useMediaQuery("only screen and (min-width : 1440px)");
-  const [click, setClick] = useState<boolean>(false);
+  // const [click, setClick] = useState<boolean>(false);
   return (
     <div
       className={`w-screen min-h-screen ${
